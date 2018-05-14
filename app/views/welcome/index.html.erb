@@ -1,0 +1,26 @@
+
+<h1> Home Page</h1>
+
+<div stlye="margin: 50px;">
+	<h3>Create a User</h3>
+	<%= form_tag create_users_path do  %>
+		<%= text_field_tag :name, nil, placeholder: "Enter a name" %>
+		<%= number_field_tag :age, nil, placeholder: "Enter age" %>
+		<%= submit_tag "Create User" %>
+	<% end %>	
+
+	<p><%= link_to "All Users", users_path  %></p>	
+</div>
+
+
+
+<div stlye="margin: 50px;">
+	<h3>Create a product</h3>
+	<%= form_for @product do |f| %>
+		<%= f.text_field :name, placeholder: "Enter a name" %>
+		<%= f.number_field :price, placeholder: "Enter price" %>
+		<%= f.number_field :quantity, placeholder: "Enter quantity" %>
+		<%= f.submit "Create Product" %>
+	<% end %>
+	<p><%= link_to "All Products", products_path %></p>		
+</div>
