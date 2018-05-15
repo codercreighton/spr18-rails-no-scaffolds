@@ -1,0 +1,13 @@
+<h1>Edit Product Page</h1>
+
+<div stlye="margin: 50px;">
+	<h3>Create a product</h3>
+	<%= form_for @product do |f| %>
+		<%= f.text_field :name, value: @product.name %>
+		<%= f.number_field :price, value: @product.price %>
+		<%= f.number_field :quantity, value: @product.quantity %>
+		<%= f.hidden_field :id, value: @product.id %>
+		<%= f.submit "Update Product" %>
+	<% end %>
+	<p><%= link_to "All Products", products_path %></p>		
+</div>

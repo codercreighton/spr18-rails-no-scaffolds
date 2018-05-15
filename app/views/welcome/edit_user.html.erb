@@ -1,0 +1,13 @@
+<h1> Edit User Page</h1>
+
+<div stlye="margin: 50px;">
+	<h3>Create a User</h3>
+	<%= form_tag update_user_path do  %>
+		<%= text_field_tag :name, @user.name %>
+		<%= number_field_tag :age, @user.age %>
+		<%= hidden_field_tag :id, @user.id %>
+		<%= submit_tag "Update User" %>
+	<% end %>	
+
+	<p><%= link_to "Back", users_path  %></p>	
+</div>

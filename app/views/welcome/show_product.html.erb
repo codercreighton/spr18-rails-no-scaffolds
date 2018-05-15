@@ -1,0 +1,6 @@
+<h1>Product Show Page</h1>
+
+<p>Product Name: <%= @product.name %></p>
+<p>Product Price: <%= number_to_currency @product.price %></p>
+<p>Quantity on Hand: <%= @product.quantity %></p>
+<p><%= link_to "Back", products_path %></p>

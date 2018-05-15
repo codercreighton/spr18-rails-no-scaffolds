@@ -19,6 +19,20 @@ class WelcomeController < ApplicationController
   	@users = User.all
   end
 
+  def show_user
+  	@user = User.find(params[:id])
+  end	
+
+  def edit_user
+  	@user = User.find(params[:id])
+	end  
+
+	def update_user
+		@user = User.find(params[:id])
+  	@user.update(name: params[:name], age: params[:age])
+  	redirect_to show_user_path(id: @user.id)
+  end	
+
 
   def create_products
   	@product = Product.create(product_params)
@@ -28,6 +42,21 @@ class WelcomeController < ApplicationController
   def products
   	@products = Product.all
   end
+
+  def show_product
+  	@product = Product.find(params[:id])
+  end	
+
+  def edit_product
+  	@product = Product.find(params[:id])
+	end  
+
+	def update_product
+		 @product = Product.find(params["product"]["id"].to_i)
+		# @product = Product.find(id: params[:id])
+		@product.update(product_params)
+		redirect_to products_path
+	end	
 
   private
   	def product_params
